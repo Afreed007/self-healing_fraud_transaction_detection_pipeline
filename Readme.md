@@ -5,7 +5,6 @@
 ![Kafka](https://img.shields.io/badge/Apache_Kafka-Event_Streaming-red.svg)
 ![Machine Learning](https://img.shields.io/badge/Machine_Learning-XGBoost-orange.svg)
 ![Reinforcement Learning](https://img.shields.io/badge/Reinforcement_Learning-Q--Learning-20B2AA.svg)
-![AI Agent](https://img.shields.io/badge/AI_Agent-Self--Healing-success.svg)
 ![LLM-API](https://img.shields.io/badge/GenAI-Google_Gemini-8E75B2.svg)
 ![Streamlit](https://img.shields.io/badge/Streamlit-Live_Dashboard-FF4B4B.svg)
 
