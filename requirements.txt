@@ -1,0 +1,28 @@
+# Data & ML
+pandas
+numpy
+scikit-learn
+xgboost
+imbalanced-learn
+scipy
+pyyaml
+
+# Drift & LLM
+evidently
+openai
+python-dotenv
+
+# Reinforcement Learning
+gymnasium
+stable-baselines3
+shimmy>=2.0
+
+# Orchestration & Streaming
+apache-airflow
+mlflow
+kafka-python
+
+# Visualization
+matplotlib
+seaborn
+jupyter

@@ -1,0 +1,49 @@
+# ==========================================
+# 🔒 Security & Environment Variables
+# ==========================================
+.env
+secrets/
+
+# ==========================================
+# 🐍 Virtual Environments & Python Caches
+# ==========================================
+adaptive-pipline/
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+dist/
+*.egg-info/
+
+# ==========================================
+# 📦 Massive Datasets & Streaming Buffers
+# ==========================================
+# GitHub limits files to 100MB. Raw, processed, and buffered data must be generated locally.
+data/raw/*.csv
+data/stream_buffer/*.csv
+data/processed/*.csv
+
+# ==========================================
+# 🤖 Generated ML Models & State Caches
+# ==========================================
+# Ignore large binary models, RL memory, and dynamically built LLM vocabularies
+models/baselines/*.pkl
+models/rl_q_table.json
+column_vocabulary.json
+
+# ==========================================
+# 📊 Metrics & Databases
+# ==========================================
+reports/benchmarks/*.txt
+mlflow.db
+mlruns/
+
+# ==========================================
+# 💻 IDEs & Operating System Files
+# ==========================================
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
