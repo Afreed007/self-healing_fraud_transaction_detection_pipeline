@@ -92,20 +92,20 @@ conda activate adaptive-pipeline
 ```
 pip install -r requirements.txt
 ```
-2. Download the Dataset
+## 2. Download the Dataset
 Due to size limits, the raw dataset is not tracked in version control.
 
 Download the PaySim Mobile Money Fraud Dataset (PS_20174392719_1491204439457_log.csv) from Kaggle.
 
 Place the downloaded CSV directly into the data/raw/ directory.
 
-3. Configure Environment Variables
+## 3. Configure Environment Variables
 Create a .env file in the root directory and add your Google Gemini API key (required for the Schema Healing Agent):
 
 Plaintext
 GEMINI_API_KEY=your_api_key_here
 
-4. Boot Up Kafka Infrastructure
+## 4. Boot Up Kafka Infrastructure
 Ensure Docker Desktop is running, then spin up the Apache Kafka and Zookeeper containers:
 ```
 docker-compose up -d
