@@ -4,8 +4,9 @@
 ![Python](https://img.shields.io/badge/Python-3.9+-blue.svg)
 ![Kafka](https://img.shields.io/badge/Apache_Kafka-Event_Streaming-red.svg)
 ![Machine Learning](https://img.shields.io/badge/Machine_Learning-XGBoost-orange.svg)
+![Reinforcement Learning](https://img.shields.io/badge/Reinforcement_Learning-Q--Learning-20B2AA.svg)
+![LLM-API](https://img.shields.io/badge/GenAI-Google_Gemini-8E75B2.svg)
 ![Streamlit](https://img.shields.io/badge/Streamlit-Live_Dashboard-FF4B4B.svg)
-![Gemini](https://img.shields.io/badge/GenAI-Google_Gemini-8E75B2.svg)
 
 ## 📖 Project Overview
 Financial fraud detection systems typically fail in production due to two critical issues: **Schema Drift** (upstream data formats changing unexpectedly) and **Concept Drift** (fraudsters adapting their behaviors). 
@@ -91,20 +92,20 @@ conda activate adaptive-pipeline
 ```
 pip install -r requirements.txt
 ```
-2. Download the Dataset
+## 2. Download the Dataset
 Due to size limits, the raw dataset is not tracked in version control.
 
 Download the PaySim Mobile Money Fraud Dataset (PS_20174392719_1491204439457_log.csv) from Kaggle.
 
 Place the downloaded CSV directly into the data/raw/ directory.
 
-3. Configure Environment Variables
+## 3. Configure Environment Variables
 Create a .env file in the root directory and add your Google Gemini API key (required for the Schema Healing Agent):
 
 Plaintext
 GEMINI_API_KEY=your_api_key_here
 
-4. Boot Up Kafka Infrastructure
+## 4. Boot Up Kafka Infrastructure
 Ensure Docker Desktop is running, then spin up the Apache Kafka and Zookeeper containers:
 ```
 docker-compose up -d
