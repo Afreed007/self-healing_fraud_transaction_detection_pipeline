@@ -67,24 +67,24 @@ class FraudRLAgent:
             return new_model_path
             
         elif action == 2:
-            # Retrain on a MIX of Base data and New Data (Memory Rehearsal)
             print("📦 Loading baseline data to mix with current batch...")
-            # We assume batch 1 is our base memory
-            base_df = pd.read_csv("data/raw/batch_1.csv").sample(n=len(current_X), replace=True, random_state=42)
-            
-            # Use our schema mapper to clean the base data
+            base_df = pd.read_csv("data/raw/batch_1.csv").sample(
+                n=len(current_X), replace=True, random_state=42
+            )
+    
             from src.llm_mapping.schema_adapter import LLMSchemaMapper
             mapper = LLMSchemaMapper()
-            base_X = mapper.heal_schema(base_df.drop(columns=['isFraud', 'isFlaggedFraud'], errors='ignore'))
+            base_X = mapper.heal_schema(
+            base_df.drop(columns=['isFraud', 'isFlaggedFraud'], errors='ignore')
+            )
             base_y = base_df['isFraud']
 
-            # Mix them together
-            mixed_X = pd.concat([base_X, current_X])
-            mixed_y = pd.concat([base_y, current_y])
+            mixed_X = pd.concat([base_X, current_X], ignore_index=True)
+            mixed_y = pd.concat([base_y, pd.Series(current_y)], ignore_index=True)
 
             model = RandomForestClassifier(n_estimators=20, random_state=42, n_jobs=-1)
             model.fit(mixed_X, mixed_y)
-            
+    
             new_model_path = "models/baselines/active_rl_model.pkl"
             joblib.dump(model, new_model_path)
             return new_model_path
